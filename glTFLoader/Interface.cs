@@ -66,6 +66,8 @@ namespace glTFLoader
                 fileData = ParseText(stream);
             }
 
+            // todo: try to load extensions and extras by pass in custom JsonConverters
+            // https://stackoverflow.com/questions/8030538/how-to-implement-custom-jsonconverter-in-json-net
             return JsonConvert.DeserializeObject<Gltf>(fileData);
         }
 
