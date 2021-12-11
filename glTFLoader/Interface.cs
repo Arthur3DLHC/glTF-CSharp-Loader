@@ -27,13 +27,13 @@ namespace glTFLoader
         /// </summary>
         /// <param name="filePath">Source file path to a gltf/glb model</param>
         /// <returns><code>Schema.Gltf</code> model</returns>
-        public static Gltf LoadModel(string filePath)
+        public static Gltf LoadModel(string filePath, params JsonConverter[] converters)
         {
             var path = Path.GetFullPath(filePath);
 
             using (Stream stream = File.OpenRead(filePath))
             {
-                return LoadModel(stream);
+                return LoadModel(stream, converters);
             }
         }
 
@@ -42,7 +42,7 @@ namespace glTFLoader
         /// </summary>
         /// <param name="stream">Readable stream to a gltf/glb model</param>
         /// <returns><code>Schema.Gltf</code> model</returns>
-        public static Gltf LoadModel(Stream stream)
+        public static Gltf LoadModel(Stream stream, params JsonConverter[] converters)
         {
             bool binaryFile = false;
 
@@ -68,7 +68,7 @@ namespace glTFLoader
 
             // todo: try to load extensions and extras by pass in custom JsonConverters
             // https://stackoverflow.com/questions/8030538/how-to-implement-custom-jsonconverter-in-json-net
-            return JsonConvert.DeserializeObject<Gltf>(fileData);
+            return JsonConvert.DeserializeObject<Gltf>(fileData, converters);
         }
 
         private static string ParseText(Stream stream)

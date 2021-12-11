@@ -10,7 +10,7 @@
     <PackageId>glTF2Loader</PackageId>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/KhronosGroup/glTF-CSharp-Loader/blob/master/README.md</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/KhronosGroup/glTF-CSharp-Loader/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicense>https://github.com/KhronosGroup/glTF-CSharp-Loader/blob/master/LICENSE.md</PackageLicense>
     <RepositoryUrl>https://github.com/KhronosGroup/glTF-CSharp-Loader</RepositoryUrl>
     <PackageIconUrl>https://github.com/KhronosGroup/glTF/blob/master/specification/figures/gltf.png</PackageIconUrl>
     <PackageTags>glTF loader C#</PackageTags>
